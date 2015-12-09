@@ -44,15 +44,14 @@ class SebastienApp(App):
 
         # Create corresponding buttons
         # for navigation
-        def go_to_screen(button):
-            sm.current = button.text.lower()
-        buttons = []
-
-        for screen in screens:
+        def setup_button(screen):
+            def go_to_screen(button):
+                sm.current = button.text.lower()
             button = Button(text=screen.name.capitalize())
             button.bind(on_release=go_to_screen)
-            buttons.append(button)
+            return button
 
+        buttons = map(setup_button, screens)
         map(sidepanel.add_widget, buttons)
 
         return drawer
