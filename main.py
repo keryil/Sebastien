@@ -1,25 +1,23 @@
 from kivy.app import App
-from kivy.uix.widget import Widget
 from kivy.uix.screenmanager import Screen, ScreenManager
-from kivy.uix.button import Button
 from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.garden.navigationdrawer import NavigationDrawer
 
 
-class ListsScreen(Screen):
+class ListsScreen(Screen, BoxLayout):
     pass
 
 
-class ProductsScreen(Screen):
+class ProductsScreen(Screen, BoxLayout):
     pass
 
 
-class HistoryScreen(Screen):
+class HistoryScreen(Screen, BoxLayout):
     pass
 
 
-class SettingsScreen(Screen):
+class SettingsScreen(Screen, BoxLayout):
     pass
 
 
@@ -46,19 +44,6 @@ class SebastienApp(App):
 
         map(sm.add_widget, screens)
         drawer.add_widget(sm)
-
-        # Create corresponding buttons
-        # for navigation
-        def go_to_screen(button):
-            sm.current = button.text.lower()
-
-        def setup_button(screen):
-            button = Button(text=screen.name.capitalize())
-            button.bind(on_release=go_to_screen)
-            return button
-
-        buttons = map(setup_button, screens)
-        # map(sidepanel.add_widget, buttons)
 
         return drawer
 

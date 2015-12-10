@@ -1,39 +1,34 @@
 #:kivy 1.0.9
 
 <ListsScreen>:
-    BoxLayout:
-        Label:
-            text: 'Shopping Lists'
+    Label:
+        text: 'Shopping Lists'
 
 <ProductsScreen>:
-    BoxLayout:
-        Label:
-            text: 'Products'
+    Label:
+        text: 'Products'
 
 <HistoryScreen>:
-    BoxLayout:
-        Label:
-            text: 'History'
+    Label:
+        text: 'History'
 
 <SettingsScreen>:
-    BoxLayout:
-        Label:
-            text: 'Settings'
+    Label:
+        text: 'Settings'
 
 <MenuWidget>
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            text: 'Navigation'
-        Button:
-            text: 'Lists'
-            on_press: root.manager.current = 'lists'
-        Button:
-            text: 'Products'
-            on_press: root.manager.current = 'products'
-        Button:
-            text: 'History'
-            on_press: root.manager.current = 'history'
-        Button:
-            text: 'Settings'
-            on_press: root.manager.current = 'settings'
+    orientation: 'vertical'
+    Label:
+        text: 'Navigation'
+    Button:
+        text: 'Lists'
+        on_press: root.manager.current = 'lists'
+    Button:
+        text: 'Products'
+        on_press: root.manager.current = 'products'
+    Button:
+        text: 'History'
+        on_press: root.manager.current = 'history'
+    Button:
+        text: 'Settings'
+        on_press: root.manager.current = 'settings'
